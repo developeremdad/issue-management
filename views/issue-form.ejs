@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %> - Issues Management</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-container">
+        <div class="form-header">
+          <h2>
+            <i
+              class="fas fa-<%= type === 'sales' ? 'chart-line' : 'cogs' %>"
+            ></i>
+            <%= title %>
+          </h2>
+          <p>Please provide details about your <%= type %> issue below</p>
+        </div>
+
+        <form action="/submit-issue" method="POST" class="issue-form">
+          <div class="form-group">
+            <label for="name">
+              <i class="fas fa-user"></i> Name (Optional)
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name (optional)"
+              autocomplete="name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="issue">
+              <i class="fas fa-exclamation-triangle"></i> Issue Description *
+            </label>
+            <textarea
+              id="issue"
+              name="issue"
+              required
+              placeholder="Please describe your <%= type %> issue in detail. Include relevant information such as when it occurred, what you expected to happen, and any error messages you received."
+              rows="6"
+            ></textarea>
+          </div>
+
+          <input type="hidden" name="type" value="<%= type %>" />
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-paper-plane"></i> Submit Issue
+            </button>
+            <a href="/" class="btn btn-secondary">
+              <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

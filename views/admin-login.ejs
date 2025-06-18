@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login - Issues Management</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="login-container">
+        <div class="login-header">
+          <div class="login-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h2>Admin Login</h2>
+          <p>Please sign in to access the admin dashboard</p>
+        </div>
+
+        <% if (error) { %>
+        <div class="error-alert">
+          <i class="fas fa-exclamation-triangle"></i>
+          <%= error %>
+        </div>
+        <% } %>
+
+        <form action="/admin/login" method="POST" class="login-form">
+          <div class="form-group">
+            <label for="username">
+              <i class="fas fa-envelope"></i> Email Address
+            </label>
+            <input
+              type="email"
+              id="username"
+              name="username"
+              required
+              placeholder="Enter your email address"
+              autocomplete="username"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password"> <i class="fas fa-lock"></i> Password </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              placeholder="Enter your password"
+              autocomplete="current-password"
+            />
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" style="width: 100%">
+              <i class="fas fa-sign-in-alt"></i> Sign In
+            </button>
+            <a
+              href="/"
+              class="btn btn-secondary"
+              style="width: 100%; margin-top: 1rem"
+            >
+              <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

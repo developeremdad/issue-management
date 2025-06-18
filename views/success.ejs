@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Success - Issues Management</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="message-container">
+        <div class="message-icon success-icon">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <h2>Issue Submitted Successfully!</h2>
+        <p>
+          Your <%= type %> issue has been submitted and will be reviewed by our
+          team shortly.
+        </p>
+        <p>Thank you for bringing this to our attention!</p>
+
+        <div class="form-actions">
+          <a href="/" class="btn btn-primary">
+            <i class="fas fa-home"></i> Back to Home
+          </a>
+          <a href="/admin" class="btn btn-secondary">
+            <i class="fas fa-chart-bar"></i> View Dashboard
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
